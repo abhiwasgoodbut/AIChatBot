@@ -17,7 +17,7 @@ export const AppContextProvider = ({children}) => {
         setUser(dummyUserData)
     }
 
-    const fetchUserChats = () => {
+    const fetchUserChats = async () => {
         setChats(dummyChats)
         setSelectedChat(dummyChats[0])
     }
@@ -42,6 +42,7 @@ export const AppContextProvider = ({children}) => {
         }else{
             document.documentElement.classList.remove('dark');
         }
+        localStorage.setItem('theme', theme)
     },[theme]
 )
 
