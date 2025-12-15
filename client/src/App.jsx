@@ -4,6 +4,7 @@ import Layout from './Layout'
 import Credits from './pages/Credits'
 import ChatBox from './components/ChatBox'
 import Community from './pages/Community'
+import Loading from './pages/Loading'
 
 
 const route = createBrowserRouter(
@@ -12,6 +13,7 @@ const route = createBrowserRouter(
       <Route path='' element = {<ChatBox/>} />
       <Route path='credits' element = {<Credits/>} />
       <Route path='community' element = {<Community/>} />
+      <Route path='/loading' element = {<Loading/>} />
     </Route>
   )
 )

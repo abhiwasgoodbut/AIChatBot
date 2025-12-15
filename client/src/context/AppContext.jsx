@@ -1,5 +1,5 @@
-import { Children, createContext, use, useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import {  createContext, useContext, useEffect, useState } from "react";
+// import { useNavigate } from "react-router-dom";
 import {dummyChats, dummyUserData} from "../assets/assets";
 
 
@@ -7,7 +7,7 @@ const AppContext = createContext()
 
 export const AppContextProvider = ({children}) => {
 
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
     const [user, setUser] = useState(null);
     const [chats, setChats] = useState([])
     const [selectedChat, setSelectedChat] = useState(null)
@@ -47,7 +47,7 @@ export const AppContextProvider = ({children}) => {
 )
 
     const value = {
-        navigate,user,setChats,setUser,chats,
+        user,setChats,setUser,chats,
         selectedChat,setSelectedChat,theme,setTheme
     }
 
