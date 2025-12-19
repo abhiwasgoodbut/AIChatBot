@@ -22,11 +22,17 @@ const Layout = () => {
    
     <>
     <Toaster />
-    {!isMenuOpen && <img onClick={() => setIsMenuOpen(true)} src={assets.menu_icon} className='absolute top-3 left-3 w-8 h-8 cursor-pointer md:hidden not-dark:invert'/>}
     {user ? (
       <div className='dark:bg-linear-to-b from-[#242124] to-[#000000] dark:text-white'>
       <div className='flex h-screen w-screen'>
         <Sidebar isMenuOpen={isMenuOpen} setIsMenuOpen= {setIsMenuOpen}/>
+          {/* ✅ CLICK OUTSIDE TO CLOSE */}
+            {isMenuOpen && (
+              <div 
+                className="fixed inset-0 bg-black/0 md:hidden"
+                onClick={() => setIsMenuOpen(false)}
+              />
+            )}
         <Outlet/>
     </div>
     </div>
