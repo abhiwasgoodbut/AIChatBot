@@ -3,6 +3,11 @@
 *{
     font-family: "Outfit", sans-serif;
 }
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
 
 @custom-variant dark (&:where(.dark, .dark *));
 
