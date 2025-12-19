@@ -75,7 +75,7 @@ export const purchasePlan = async (req,res) => {
                 },
             ],
             mode: 'payment',
-            success_url: `${origin}loading`,
+            success_url: `${origin}/loading`,
             cancel_url: `${origin}`,
             metadata: {transactionId: transaction._id.toString(), appId: 'quickgpt'} ,
             expires_at: Math.floor(Date.now() / 1000) + 30 * 60, //expire in 30min
@@ -84,6 +84,7 @@ export const purchasePlan = async (req,res) => {
     res.json({success: true, url: session.url})
 
     } catch (error) {
+        console.log(error)
         res.json({succes: false, message: error.message})
     }
 }
